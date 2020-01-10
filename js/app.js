@@ -16,7 +16,7 @@ require([
 
         // Create base layer from Mapbox street layer
       var mapBaseLayer = new WebTileLayer({
-        urlTemplate: 'https://{subDomain}.tiles.mapbox.com/v4/fcc.k74ed5ge/{level}/{col}/{row}.png?access_token=pk.eyJ1IjoiZmNjIiwiYSI6InBiaGMyLU0ifQ.LOmVYpUCFv2yWpbvxDdQNg',
+        urlTemplate: 'https://{subDomain}.tiles.mapbox.com/v4/fcc.map-toolde8w/{level}/{col}/{row}.png?access_token=pk.eyJ1IjoiZmNjIiwiYSI6InBiaGMyLU0ifQ.LOmVYpUCFv2yWpbvxDdQNg',
         subDomains: ['a', 'b', 'c', 'd'],
         copyright: '\u00A9 OpenStreetMap contributors Design \u00A9 Mapbox'
       })
@@ -76,17 +76,17 @@ require([
 
       var template = {
         title: 'caf2_auction_cam_auction_cbg_geom',
-        content: '<ul style="margin-top: 0"><li>cbg_fips = {cbg_fips}</li><li>reserve_price = {reserve_price}</li><li>locations = {locations}</li><ul>'
+        content: '<ul style="margin-top: 0"><li>cbg_id = {cbg_id}</li><li>stateabbr = {stateabbr}</li><li>bidder = {bidder}</li><li>tier = {tier}</li><li>latency = {latency}</li><li>locations = {locations}</li><ul>'
       }
 
-      // Create vector tile layer
+     // Create vector tile layer
       var tileLayer = new VectorTileLayer({
-        url: 'https://tiles.arcgis.com/tiles/YnOQrIGdN9JGtBh4/arcgis/rest/services/CAF2_Auction_Eligible_Areas_30jan18_fix/VectorTileServer/resources/styles/root.json?f=pjson'
+        url: 'https://tiles.arcgis.com/tiles/YnOQrIGdN9JGtBh4/arcgis/rest/services/Map/VectorTileServer'
       })
 
       // Create feature layers
       var fLayer = new FeatureLayer({
-        url: 'https://services.arcgis.com/YnOQrIGdN9JGtBh4/arcgis/rest/services/VisitedStates/FeatureServer',
+        url: 'https://services.arcgis.com/YnOQrIGdN9JGtBh4/arcgis/rest/services/auction903_results_public/FeatureServer',
         outFields: ['*']
       })
 
